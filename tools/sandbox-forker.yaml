@@ -1,0 +1,17 @@
+name: "sandbox-forker"
+description: "Clones and forks an active environment into independent parallel sandboxes for agent exploration."
+input_schema:
+  type: object
+  properties:
+    source_env_id:
+      type: string
+      description: "Identifier of active parent environment to fork."
+    fork_count:
+      type: integer
+      description: "Number of parallel child environments to spawn."
+      default: 1
+    child_env_prefix:
+      type: string
+      description: "Prefix for spawned child environment identifiers."
+  required:
+    - source_env_id

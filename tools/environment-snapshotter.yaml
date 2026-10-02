@@ -1,0 +1,25 @@
+name: "environment-snapshotter"
+description: "Captures incremental memory and disk snapshots and persists to S3-compatible storage."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "create_snapshot"
+        - "restore_snapshot"
+        - "persist_to_s3"
+      description: "Snapshot operation to execute."
+    env_id:
+      type: string
+      description: "Target microVM environment ID."
+    snapshot_name:
+      type: string
+      description: "Name or tag for the snapshot."
+    s3_destination_uri:
+      type: string
+      description: "Optional S3 URI for remote snapshot persistence."
+  required:
+    - action
+    - env_id
+    - snapshot_name

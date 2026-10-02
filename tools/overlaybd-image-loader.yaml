@@ -1,0 +1,22 @@
+name: "overlaybd-image-loader"
+description: "Pulls and mounts OCI images on demand through overlaybd block storage."
+input_schema:
+  type: object
+  properties:
+    image_ref:
+      type: string
+      description: "OCI image reference (e.g., registry.example.com/tasks/math-eval:latest)."
+    env_id:
+      type: string
+      description: "Target environment to mount the block device into."
+    cache_policy:
+      type: string
+      enum:
+        - "read_through"
+        - "pre_cache"
+        - "bypass"
+      description: "Local disk caching policy for block chunks."
+      default: "read_through"
+  required:
+    - image_ref
+    - env_id

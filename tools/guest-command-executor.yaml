@@ -1,0 +1,22 @@
+name: "guest-command-executor"
+description: "Dispatches shell commands, scripts, and file transfers inside target guest environments via envd."
+input_schema:
+  type: object
+  properties:
+    env_id:
+      type: string
+      description: "Target microVM environment ID."
+    command:
+      type: string
+      description: "Shell command or script to execute inside the guest VM."
+    timeout_seconds:
+      type: integer
+      description: "Command execution timeout in seconds."
+      default: 60
+    working_directory:
+      type: string
+      description: "In-guest working directory."
+      default: "/root"
+  required:
+    - env_id
+    - command

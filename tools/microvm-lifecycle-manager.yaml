@@ -1,0 +1,28 @@
+name: "microvm-lifecycle-manager"
+description: "Launches, pauses, resumes, and terminates Firecracker microVM sandboxes."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "create"
+        - "start"
+        - "pause"
+        - "resume"
+        - "destroy"
+      description: "MicroVM lifecycle operation."
+    env_id:
+      type: string
+      description: "Unique identifier for the microVM environment."
+    vcpu_count:
+      type: integer
+      description: "Number of virtual CPUs to allocate."
+      default: 2
+    mem_size_mib:
+      type: integer
+      description: "Memory size in MiB."
+      default: 2048
+  required:
+    - action
+    - env_id

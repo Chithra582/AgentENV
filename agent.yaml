@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "agentenv"
+version: "0.2.3"
+description: "High-scale agent environment platform powering agentic RL training with sub-50ms Firecracker microVMs, overlaybd, and instant forking."
+author: "kvcache-ai & Moonshot AI / AgentENV Contributors"
+license: "MIT"
+metadata:
+  domain: "Developer Tools / Scalable Agent Sandboxes, Firecracker MicroVMs & RL Training Environments"
+  category: "Developer Tools"
+  framework: "AgentENV Rust Core / Firecracker MicroVM / overlaybd / ublk"
+  language: "Rust"
+skills:
+  - "microvm-sandbox-orchestration"
+  - "snapshot-and-fork-management"
+  - "overlaybd-storage-caching"
+  - "agentic-rl-environment-control"
+tools:
+  - "microvm-lifecycle-manager"
+  - "environment-snapshotter"
+  - "sandbox-forker"
+  - "overlaybd-image-loader"
+  - "guest-command-executor"
